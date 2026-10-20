@@ -17,8 +17,8 @@ GitHub Pages publishes the root of the `main` branch. Edit the website files and
 
 ## Design comparisons
 
-The default uses Departure Mono headings, Verdana text, and a compact early desktop
-interface. Use `?theme=terminal` for VT323 and a text interface, or `?theme=classic`
+The default uses Departure Mono headings, Verdana text, and a simple academic
+layout with dotted rules. Use `?theme=terminal` for VT323 and a text interface, or `?theme=classic`
 for Georgia and a plain academic page.
 
 The geometric illustration is a static SVG. No animation or framework is needed.

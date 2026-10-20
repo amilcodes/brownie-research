@@ -15,7 +15,6 @@
 :root {
   color-scheme: dark;
   --background: #3b2b23;
-  --bar: #49362b;
   --text: #f5f2e9;
   --secondary: #c4b7a7;
   --accent: #c5a17d;
@@ -41,8 +40,6 @@ h1, h2 { font-weight: 400; }
   width: calc(100% - 64px);
   max-width: 860px;
   margin: 72px auto 48px;
-  border: 1px solid var(--line);
-  box-shadow: 4px 4px 0 #291e18;
 }
 .skip-link {
   position: fixed;
@@ -61,23 +58,18 @@ h1, h2 { font-weight: 400; }
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--line);
-  background: var(--bar);
+  padding: 12px 0 20px;
+  border-bottom: 1px dotted var(--line);
 }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 15px; text-decoration: none; }
 .brand-mark { width: 32px; height: 32px; stroke: var(--accent); stroke-width: 2; shape-rendering: crispEdges; }
-.site-header nav { display: flex; gap: 10px; font-size: 14px; }
+.site-header nav { display: flex; gap: 24px; font-size: 16px; }
 .site-header nav a {
   display: inline-block;
-  padding: 4px 12px;
-  border: 1px solid var(--line);
-  box-shadow: inset 1px 1px 0 #69503d, 2px 2px 0 #2b1f18;
-  text-decoration: none;
+  padding-block: 4px;
+  text-decoration: underline;
 }
-.site-header nav a:hover { background: #584132; color: var(--text); }
-.site-header nav a:active { box-shadow: inset 1px 1px 0 #2b1f18; transform: translate(1px, 1px); }
-main { padding: 38px 36px 36px; }
+main { padding: 38px 0 36px; }
 .introduction { display: grid; grid-template-columns: 1fr 128px; gap: 32px; align-items: center; }
 h1 { font: 400 33px/1.4 var(--heading-font); }
 .introduction p { max-width: 35em; margin-top: 17px; color: var(--secondary); }
@@ -88,7 +80,7 @@ ul { padding-left: 19px; list-style-type: square; }
 li { padding-left: 5px; }
 li + li { margin-top: 8px; }
 li::marker { color: var(--accent); font-size: 12px; }
-footer { padding: 13px 18px; border-top: 1px solid var(--line); color: var(--secondary); font-size: 14px; }
+footer { padding: 16px 0; border-top: 1px dotted var(--line); color: var(--secondary); font-size: 14px; }
 
 /* Optional design comparisons share the same content and color palette. */
 :root[data-theme='terminal'] { --body-font: VT323, monospace; --heading-font: VT323, monospace; }
@@ -119,11 +111,10 @@ footer { padding: 13px 18px; border-top: 1px solid var(--line); color: var(--sec
 [data-theme='classic'] footer { padding-inline: 0; font-size: 17px; }
 
 @media (max-width: 680px) {
-  .page { width: calc(100% - 32px); margin-block: 24px; }
-  .site-header { padding: 13px 16px 16px; gap: 14px; }
-  .site-header nav { gap: 12px; }
-  .site-header nav a { padding: 5px 13px; }
-  main { padding: 28px 22px 30px; }
+  .page { width: calc(100% - 40px); margin-block: 24px; }
+  .site-header { padding: 0 0 18px; gap: 14px; }
+  .site-header nav { gap: 20px; }
+  main { padding: 28px 0 30px; }
   .introduction { grid-template-columns: 1fr; gap: 20px; }
   h1 { font-size: 22px; line-height: 1.5; }
   .introduction p { margin-top: 14px; }
@@ -132,7 +123,7 @@ footer { padding: 13px 18px; border-top: 1px solid var(--line); color: var(--sec
   h2 { font-size: 22px; }
   ul { padding-left: 16px; }
   li { padding-left: 3px; }
-  footer { padding: 14px 16px; }
+  footer { padding: 14px 0; }
   [data-theme='terminal'] h1 { font-size: 36px; }
   [data-theme='terminal'] .site-header nav a { padding: 0; }
   [data-theme='classic'] .page { width: calc(100% - 40px); }
