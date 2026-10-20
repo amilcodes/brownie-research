@@ -1,17 +1,5 @@
 (() => {
   'use strict';
-  const menuButton = document.querySelector('.menu-toggle');
-  const mobileNav = document.querySelector('#mobile-nav');
-  const closeMenu = () => { menuButton.setAttribute('aria-expanded', 'false'); mobileNav.hidden = true; };
-  menuButton.addEventListener('click', () => {
-    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-    menuButton.setAttribute('aria-expanded', String(!expanded));
-    mobileNav.hidden = expanded;
-  });
-  mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !mobileNav.hidden) { closeMenu(); menuButton.focus(); } });
-  const mobileQuery = window.matchMedia('(max-width: 760px)');
-  mobileQuery.addEventListener('change', event => { if (!event.matches) closeMenu(); });
   document.querySelector('#current-year').textContent = String(new Date().getFullYear());
 
   const canvas = document.querySelector('#point-cloud');
@@ -49,14 +37,14 @@
     context.clearRect(0, 0, width, height);
     const scale = Math.min(width * .355, height * .36);
     // Quiet coordinate grid, with no gradients or blur.
-    context.fillStyle = 'rgba(111,85,61,.15)';
+    context.fillStyle = 'rgba(197,161,125,.18)';
     for (let x = 20; x < width - 12; x += 23) for (let y = 54; y < height - 44; y += 23) context.fillRect(x, y, .8, .8);
     const projected = points.map(p => { const q = project(p[0], p[1], p[2], scale); q.push(p[3]); return q; }).sort((a,b) => b[2] - a[2]);
     for (const p of projected) {
       const opacity = .17 + (1.2 - p[2]) * .2;
-      context.fillStyle = `rgba(111,75,46,${opacity})`;
+      context.fillStyle = `rgba(197,161,125,${opacity})`;
       const r = (.6 + p[4] * .45) * p[3];
-      context.beginPath(); context.arc(p[0], p[1], r, 0, Math.PI * 2); context.fill();
+      context.fillRect(Math.round(p[0]), Math.round(p[1]), r * 1.6, r * 1.6);
     }
     const tesseract = vertices.map(p => {
       const angle = .18 + time * .09;
@@ -65,9 +53,9 @@
       const perspective = 1.7 / (3 - w * .45);
       return project(x * perspective, p[1] * perspective, p[2] * perspective, scale * .89);
     });
-    context.strokeStyle = 'rgba(92,62,39,.5)'; context.lineWidth = .7;
+    context.strokeStyle = 'rgba(245,242,233,.32)'; context.lineWidth = .7;
     for (const [a,b] of edges) { context.beginPath(); context.moveTo(tesseract[a][0],tesseract[a][1]); context.lineTo(tesseract[b][0],tesseract[b][1]); context.stroke(); }
-    context.fillStyle = '#735135';
+    context.fillStyle = '#d6b28e';
     for (const p of tesseract) context.fillRect(p[0] - 1.65, p[1] - 1.65, 3.3, 3.3);
   }
   function animate(stamp) {
@@ -83,7 +71,7 @@
   function syncToggle() {
     toggle.setAttribute('aria-pressed', String(paused));
     toggle.setAttribute('aria-label', paused ? 'Play point cloud animation' : 'Pause point cloud animation');
-    toggle.innerHTML = paused ? '<span aria-hidden="true">▷</span> Play' : '<span aria-hidden="true">Ⅱ</span> Pause';
+    toggle.textContent = paused ? 'Play' : 'Pause';
   }
   toggle.addEventListener('click', () => { paused = !paused; syncToggle(); if (paused) stop(); else start(); });
   reduceMotion.addEventListener('change', event => { paused = event.matches; syncToggle(); if (paused) { stop(); draw(); } else start(); });

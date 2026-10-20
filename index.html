@@ -3,98 +3,69 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f2e9">
-  <meta name="description" content="Brownie Research is a student-led foundation model research lab. Exploring how models learn, reason, and represent the world.">
+  <meta name="theme-color" content="#3b2b23">
+  <meta name="description" content="Brownie Research is a student-led foundation model research lab.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Brownie Research — Intelligence, in the making.">
-  <meta property="og:description" content="A student-led foundation model research lab. Small team. Open questions. Foundational thinking.">
-  <title>Brownie Research — Intelligence, in the making.</title>
+  <meta property="og:title" content="Brownie Research">
+  <meta property="og:description" content="A student-led foundation model research lab.">
+  <meta property="og:url" content="https://brownieresear.ch/">
+  <title>Brownie Research</title>
   <link rel="icon" type="image/svg+xml" href="assets/tesseract.svg">
-  <link rel="preload" href="assets/manrope-regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    const font = new URLSearchParams(location.search).get('font');
+    if (['mono', 'source'].includes(font)) document.documentElement.dataset.font = font;
+  </script>
   <script src="app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrap">
-    <a class="brand" href="#" aria-label="Brownie Research home">
+    <a class="brand" href="./" aria-label="Brownie Research home">
       <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M6 6H58V58H6ZM20 20H44V44H20ZM6 6L20 20M58 6L44 20M58 58L44 44M6 58L20 44"/></svg>
-      <span>brownie<br>research<span class="brand-period">.</span></span>
+      <span>brownie<br>research</span>
     </a>
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#research">Research</a><a href="#approach">Approach</a><a href="#about">The lab <span aria-hidden="true">↗</span></a>
-    </nav>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu <span aria-hidden="true">+</span></button>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
-      <a href="#research">Research <span>01</span></a><a href="#approach">Approach <span>02</span></a><a href="#about">The lab <span>03</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#research">Research</a>
+      <a href="https://github.com/amilcodes/brownie-research">GitHub <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
-  <main id="main">
-    <section class="hero wrap" aria-labelledby="hero-heading">
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="square-dot" aria-hidden="true"></span> STUDENT-LED · FOUNDATION MODELS</p>
-        <h1 id="hero-heading">Intelligence,<br>in the making<span class="title-period">.</span></h1>
-        <p class="hero-description">A student research lab exploring how models<br class="desktop-break"> learn, reason, and represent the world.</p>
-        <a class="text-link hero-link" href="#research">Explore our focus <span aria-hidden="true">↗</span></a>
+        <h1 id="hero-heading">Brownie Research</h1>
+        <p>A student-led foundation model research lab.</p>
+        <a class="research-link" href="#research">Research interests <span aria-hidden="true">↓</span></a>
       </div>
-      <figure class="hero-figure">
-        <div class="figure-corner corner-tl" aria-hidden="true"></div><div class="figure-corner corner-tr" aria-hidden="true"></div>
-        <div class="figure-corner corner-bl" aria-hidden="true"></div><div class="figure-corner corner-br" aria-hidden="true"></div>
-        <div class="figure-top"><span>FIG. 01</span><span>LATENT GEOMETRY</span></div>
-        <canvas id="point-cloud" aria-label="An abstract point cloud rotating around a projected tesseract">An abstract point cloud surrounding a tesseract, the lab's symbol for exploring higher dimensions.</canvas>
-        <figcaption><span>HIGHER DIMENSIONS, NEW PERSPECTIVES</span><button id="motion-toggle" type="button" aria-pressed="false" aria-label="Pause point cloud animation"><span aria-hidden="true">Ⅱ</span> Pause</button></figcaption>
-      </figure>
+      <div class="hero-figure">
+        <canvas id="point-cloud" aria-label="An animated geometric point cloud" role="img"></canvas>
+        <button id="motion-toggle" type="button" aria-pressed="false" aria-label="Pause point cloud animation">Pause</button>
+      </div>
     </section>
 
-    <div class="hero-baseline wrap" aria-hidden="true"><span>THINK DEEPLY. BUILD CAREFULLY.</span><span class="baseline-coordinate">[ 0.00, 0.00, 0.00, 1.00 ]</span><a href="#research" tabindex="-1">SCROLL TO EXPLORE <span>↓</span></a></div>
-
-    <section class="research-section wrap section-space" id="research" aria-labelledby="research-heading">
-      <div class="section-intro">
-        <p class="eyebrow section-number">01 / RESEARCH</p>
-        <div><h2 id="research-heading">Big questions.<br>First principles.</h2><p class="section-description">Foundation models open up a new space of questions.<br class="desktop-break"> These are the directions we want to explore.</p></div>
-      </div>
-
-      <div class="research-list">
-        <details class="research-item" open>
-          <summary><span class="research-index">01</span><h3>Representation &amp; reasoning</h3><span class="research-tag">UNDERSTANDING</span><span class="disclosure-icon" aria-hidden="true">+</span></summary>
-          <div class="research-detail"><div class="detail-copy"><p>What does a model learn about the world?</p><p>Exploring the structures that emerge inside foundation models, and how learned representations support reasoning and generalization.</p><div class="topic-tags"><span>REPRESENTATIONS</span><span>GENERALIZATION</span></div></div>
-            <svg class="research-diagram network-diagram" viewBox="0 0 240 116" fill="none" role="img" aria-label="A sparse network of connected representations"><g class="diagram-lines"><path d="M23 58L76 23L129 44L184 19L219 58L185 98L129 78L76 94L23 58L76 57L129 44L129 78L185 58L219 58M76 23L76 94M23 58L76 94L129 78M76 23L129 78M76 57L185 58L184 19M76 57L129 78L185 98M129 44L185 58L185 98"/></g><g class="diagram-nodes"><circle cx="23" cy="58" r="3"/><circle cx="76" cy="23" r="3"/><circle cx="76" cy="57" r="3"/><circle cx="76" cy="94" r="3"/><circle cx="129" cy="44" r="3"/><circle cx="129" cy="78" r="3"/><circle cx="184" cy="19" r="3"/><circle cx="185" cy="58" r="3"/><circle cx="185" cy="98" r="3"/><circle cx="219" cy="58" r="3"/></g></svg>
-          </div>
-        </details>
-        <details class="research-item">
-          <summary><span class="research-index">02</span><h3>Learning &amp; adaptation</h3><span class="research-tag">BUILDING</span><span class="disclosure-icon" aria-hidden="true">+</span></summary>
-          <div class="research-detail"><div class="detail-copy"><p>How can models learn more from less?</p><p>Investigating the relationship between data, compute, and learning. Thinking about efficient training, adaptation, and the path from a general model to a useful one.</p><div class="topic-tags"><span>DATA EFFICIENCY</span><span>ADAPTATION</span></div></div>
-            <svg class="research-diagram" viewBox="0 0 240 116" fill="none" role="img" aria-label="Illustrative learning curves"><g class="diagram-lines"><path d="M24 16V97H221M24 57H221M24 77H221M24 37H221"/><path d="M26 86C56 86 52 30 97 30S153 21 217 21" class="strong-line"/><path d="M26 90C69 90 88 47 124 47S176 34 217 34" stroke-dasharray="3 4"/></g><g class="diagram-nodes"><circle cx="97" cy="30" r="3"/><circle cx="217" cy="21" r="3"/></g></svg>
-          </div>
-        </details>
-        <details class="research-item">
-          <summary><span class="research-index">03</span><h3>Evaluation &amp; behavior</h3><span class="research-tag">MEASURING</span><span class="disclosure-icon" aria-hidden="true">+</span></summary>
-          <div class="research-detail"><div class="detail-copy"><p>What does progress actually look like?</p><p>Asking what evaluations reveal, what they miss, and how model behavior changes beyond familiar benchmarks. Better questions begin with better measurements.</p><div class="topic-tags"><span>EVALUATION</span><span>MODEL BEHAVIOR</span></div></div>
-            <svg class="research-diagram" viewBox="0 0 240 116" fill="none" role="img" aria-label="An illustrative evaluation matrix"><g class="diagram-lines"><path d="M62 16H178V100H62ZM62 37H178M62 58H178M62 79H178M91 16V100M120 16V100M149 16V100"/></g><g class="matrix-cells"><path opacity=".2" d="M63 17H90V36H63ZM121 38H148V57H121ZM150 80H177V99H150Z"/><path opacity=".45" d="M92 38H119V57H92ZM121 59H148V78H121ZM63 80H90V99H63Z"/><path opacity=".7" d="M150 17H177V36H150ZM92 59H119V78H92Z"/></g></svg>
-          </div>
-        </details>
-      </div>
-      <p class="research-note">A starting point for inquiry. Specific projects and results will follow.</p>
-    </section>
-
-    <section class="approach-section" id="approach" aria-labelledby="approach-heading">
-      <div class="wrap approach-inner">
-        <div class="approach-heading"><p class="eyebrow">02 / APPROACH</p><h2 id="approach-heading">Curiosity,<br>with rigor.</h2><p>Good research starts with a question<br class="desktop-break"> worth sitting with.</p><svg class="approach-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M6 6H58V58H6ZM20 20H44V44H20ZM6 6L20 20M58 6L44 20M58 58L44 44M6 58L20 44"/></svg></div>
-        <div class="principles">
-          <article><span class="eyebrow">[ 01 ]</span><h3>Start with the fundamentals.</h3><p>Understand the assumptions. Read the original work. Look for the question behind the result.</p></article>
-          <article><span class="eyebrow">[ 02 ]</span><h3>Make the idea testable.</h3><p>Turn intuition into an experiment. Build small, measure carefully, and let the evidence shape the next step.</p></article>
-          <article><span class="eyebrow">[ 03 ]</span><h3>Think in the open.</h3><p>Make room for unfinished ideas, thoughtful disagreement, and the kind of collaboration that makes a question better.</p></article>
+    <section class="research" id="research" aria-labelledby="research-heading">
+      <h2 id="research-heading">Research interests</h2>
+      <dl class="research-list">
+        <div>
+          <dt>Representations &amp; reasoning</dt>
+          <dd>How models represent information and use it to reason.</dd>
         </div>
-      </div>
-    </section>
-
-    <section class="about-section wrap section-space" id="about" aria-labelledby="about-heading">
-      <div class="section-intro"><p class="eyebrow section-number">03 / THE LAB</p><div><h2 id="about-heading">Student energy.<br>Serious questions.</h2></div></div>
-      <div class="about-content"><div class="about-art" aria-hidden="true"><svg viewBox="0 0 420 210" fill="none"><defs><pattern id="dot-grid" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" fill="currentColor" opacity=".3"/></pattern></defs><rect width="420" height="210" fill="url(#dot-grid)"/><g stroke="currentColor"><path d="M135 31H285V181H135ZM176 72H244V140H176ZM135 31L176 72M285 31L244 72M285 181L244 140M135 181L176 140" stroke-width="1.25"/><path d="M210 8V204M102 106H318" stroke-dasharray="2 5" opacity=".35"/></g><g fill="currentColor"><rect x="132" y="28" width="6" height="6"/><rect x="282" y="28" width="6" height="6"/><rect x="282" y="178" width="6" height="6"/><rect x="132" y="178" width="6" height="6"/></g></svg><span class="eyebrow">A DIFFERENT DIMENSION OF THINKING.</span></div><div class="about-copy"><p>Brownie Research is a student-led foundation model research lab.</p><p>We’re drawn to the questions beneath the surface: how intelligence takes shape, what models understand, and how to study them with care.</p><p>Our starting point is simple. Bring curious people together, give ideas room to develop, and do the work to understand them.</p><a class="text-link" href="#research">Find your question <span aria-hidden="true">↗</span></a></div></div>
+        <div>
+          <dt>Learning &amp; adaptation</dt>
+          <dd>How models learn from data and adapt to new tasks.</dd>
+        </div>
+        <div>
+          <dt>Evaluation</dt>
+          <dd>Understanding model capabilities and their limits.</dd>
+        </div>
+      </dl>
     </section>
   </main>
 
-  <footer class="site-footer wrap"><div class="footer-top"><a class="brand" href="#" aria-label="Brownie Research home"><svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M6 6H58V58H6ZM20 20H44V44H20ZM6 6L20 20M58 6L44 20M58 58L44 44M6 58L20 44"/></svg><span>brownie<br>research<span class="brand-period">.</span></span></a><span class="footer-statement">An open mind.<br>A foundational question.</span><a href="#main" class="back-top">Back to top <span aria-hidden="true">↑</span></a></div><div class="footer-bottom"><span>© <span id="current-year">2026</span> BROWNIE RESEARCH</span><span>STUDENT-LED · INDEPENDENTLY CURIOUS</span><span>brownieresear.ch</span></div></footer>
+  <footer class="site-footer wrap">
+    <span>© <span id="current-year">2026</span> Brownie Research</span>
+    <a href="#main">Back to top <span aria-hidden="true">↑</span></a>
+  </footer>
 </body>
 </html>
