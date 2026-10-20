@@ -12,16 +12,22 @@ GitHub Pages publishes the root of the `main` branch. Edit the website files and
 
 - `index.html`: page content
 - `styles.css`: layout and styling
-- `app.js`: point cloud and interactions
+- `app.js`: design preview selection and copyright year
 - `assets/`: logo, fonts, and font licenses
 
-## Font comparisons
+## Design comparisons
 
-The default uses IBM Plex Mono for headings and IBM Plex Sans for body text.
-Append `?font=mono` to preview IBM Plex Mono throughout, or `?font=source` for
-Source Code Pro. These comparisons use the same content and layout.
+The default uses Departure Mono headings, Verdana text, and a compact early desktop
+interface. Use `?theme=terminal` for VT323 and a text interface, or `?theme=classic`
+for Georgia and a plain academic page.
 
-Font files are self-hosted under their included SIL Open Font Licenses.
+The geometric illustration is a static SVG. No animation or framework is needed.
+Departure Mono and VT323 are self-hosted under their included SIL Open Font
+Licenses. Georgia and Verdana use the visitor's available system fonts.
+
+Font sources:
+- https://github.com/rektdeckard/departure-mono
+- https://github.com/google/fonts/tree/main/ofl/vt323
 
 ## Local preview
 

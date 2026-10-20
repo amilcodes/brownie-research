@@ -11,61 +11,42 @@
   <meta property="og:url" content="https://brownieresear.ch/">
   <title>Brownie Research</title>
   <link rel="icon" type="image/svg+xml" href="assets/tesseract.svg">
-  <link rel="stylesheet" href="styles.css">
-  <script>
-    const font = new URLSearchParams(location.search).get('font');
-    if (['mono', 'source'].includes(font)) document.documentElement.dataset.font = font;
-  </script>
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=pixel-1">
+  <script src="app.js?v=pixel-1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header wrap">
-    <a class="brand" href="./" aria-label="Brownie Research home">
-      <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M6 6H58V58H6ZM20 20H44V44H20ZM6 6L20 20M58 6L44 20M58 58L44 44M6 58L20 44"/></svg>
-      <span>brownie<br>research</span>
-    </a>
-    <nav aria-label="Main navigation">
-      <a href="#research">Research</a>
-      <a href="https://github.com/amilcodes/brownie-research">GitHub <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Brownie Research home">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M6 6H58V58H6ZM20 20H44V44H20ZM6 6L20 20M58 6L44 20M58 58L44 44M6 58L20 44"/></svg>
+        <span>brownieresear.ch</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#research">Research</a>
+        <a href="https://github.com/amilcodes/brownie-research">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
 
-  <main id="main" class="wrap">
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-copy">
-        <h1 id="hero-heading">Brownie Research</h1>
-        <p>A student-led foundation model research lab.</p>
-        <a class="research-link" href="#research">Research interests <span aria-hidden="true">↓</span></a>
+    <main id="main">
+      <div class="introduction">
+        <div>
+          <h1>Brownie Research</h1>
+          <p>A student-led foundation model research lab.</p>
+        </div>
+        <img class="geometry" src="assets/pixel-tesseract.svg" alt="" width="128" height="128">
       </div>
-      <div class="hero-figure">
-        <canvas id="point-cloud" aria-label="An animated geometric point cloud" role="img"></canvas>
-        <button id="motion-toggle" type="button" aria-pressed="false" aria-label="Pause point cloud animation">Pause</button>
-      </div>
-    </section>
+      <section id="research" aria-labelledby="research-heading">
+        <h2 id="research-heading">Research</h2>
+        <ul>
+          <li>Representations &amp; reasoning</li>
+          <li>Learning &amp; adaptation</li>
+          <li>Evaluation</li>
+        </ul>
+      </section>
+    </main>
 
-    <section class="research" id="research" aria-labelledby="research-heading">
-      <h2 id="research-heading">Research interests</h2>
-      <dl class="research-list">
-        <div>
-          <dt>Representations &amp; reasoning</dt>
-          <dd>How models represent information and use it to reason.</dd>
-        </div>
-        <div>
-          <dt>Learning &amp; adaptation</dt>
-          <dd>How models learn from data and adapt to new tasks.</dd>
-        </div>
-        <div>
-          <dt>Evaluation</dt>
-          <dd>Understanding model capabilities and their limits.</dd>
-        </div>
-      </dl>
-    </section>
-  </main>
-
-  <footer class="site-footer wrap">
-    <span>© <span id="current-year">2026</span> Brownie Research</span>
-    <a href="#main">Back to top <span aria-hidden="true">↑</span></a>
-  </footer>
+    <footer>© <span id="current-year">2026</span> Brownie Research</footer>
+  </div>
 </body>
 </html>
