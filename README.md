@@ -17,13 +17,13 @@ GitHub Pages publishes the root of the `main` branch. Edit the website files and
 
 ## Design comparisons
 
-The default uses Departure Mono headings, Verdana text, and a simple academic
+The default uses Departure Mono throughout and a simple academic
 layout with dotted rules. Use `?theme=terminal` for VT323 and a text interface, or `?theme=classic`
 for Georgia and a plain academic page.
 
 The geometric illustration is a static SVG. No animation or framework is needed.
 Departure Mono and VT323 are self-hosted under their included SIL Open Font
-Licenses. Georgia and Verdana use the visitor's available system fonts.
+Licenses. Georgia uses the visitor's available system fonts.
 
 Font sources:
 - https://github.com/rektdeckard/departure-mono
